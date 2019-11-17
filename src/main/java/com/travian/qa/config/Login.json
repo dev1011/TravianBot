@@ -1,0 +1,16 @@
+{
+  "UserInput": {
+    "Login": {
+      "url": "https://ts1.anglosphere.travian.com/login.php",
+      "name": "",
+      "password": ""
+    },
+    "VillageToClickFarmList": {
+      "villageName": "Camp Lightning"
+    },
+    "VillagesForWhichFarmListHasToBeClicked": [
+      "Camp Lightning",
+      "Camp Lightning"
+    ]
+  }
+}
