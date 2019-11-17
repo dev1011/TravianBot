@@ -32,12 +32,6 @@ public class TestBase {
         try {
 
 
-            StringBuilder configfilePath = new StringBuilder();
-            configfilePath.append(System.getProperty("user.dir"));
-            configfilePath.append("/src/main/java/com/travian/qa/config/config.properties");
-            prop = new Properties();
-            FileInputStream fileInputStream = new FileInputStream(configfilePath.toString());
-            prop.load(fileInputStream);
 
             StringBuilder userInputfilePath = new StringBuilder();
             userInputfilePath.append(System.getProperty("user.dir"));
@@ -47,11 +41,9 @@ public class TestBase {
 
 
 
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Config Properties File not found.. Cannot proceed.. !!!");
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
@@ -75,7 +67,7 @@ public class TestBase {
     public static void initialization() {
         String appUrl = userInputData.getUserInput().getLogin().getUrl();
 
-        String chromeDrivePath = System.getProperty("user.dir") + "\\" + prop.getProperty("chromeDriverPath");
+        String chromeDrivePath = System.getProperty("user.dir") + "/" + "src/test/resources/chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", chromeDrivePath);
 
         ChromeOptions chromeOptions = new ChromeOptions();
